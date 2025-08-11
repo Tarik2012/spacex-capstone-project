@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+{% block title %}Data Collection - SpaceX Capstone{% endblock %}
+
+{% block content %}
+  <h1 class="text-3xl font-bold text-blue-800 mb-6">Data Collection</h1>
+
+  <div class="space-y-4 text-gray-700 leading-relaxed">
+    <p>
+      In this section, we outline the methods used to collect raw data about Falcon 9 rocket launches.
+      Two main sources were used:
+    </p>
+
+    <ul class="list-disc pl-6">
+      <li>
+        <strong>SpaceX REST API:</strong> Provides structured JSON data on past launches, including payloads,
+        rocket IDs, landing outcomes, and more.
+      </li>
+      <li>
+        <strong>Wikipedia:</strong> Specific tables were scraped using BeautifulSoup to enrich the dataset with
+        additional contextual information such as mission names and outcomes.
+      </li>
+    </ul>
+
+    <p>
+      The collected data includes technical and mission-specific information which was later cleaned and normalized
+      to build a high-quality dataset ready for analysis and modeling.
+    </p>
+
+    <div class="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+      <p class="font-semibold mb-2">Tools used:</p>
+      <ul class="list-disc pl-6">
+        <li><code>requests</code> – To access and retrieve data from the SpaceX API</li>
+        <li><code>pandas</code> – For data wrangling and normalization</li>
+        <li><code>BeautifulSoup</code> – For scraping HTML tables from Wikipedia</li>
+        <li><code>json_normalize</code> – To flatten nested JSON structures into tabular format</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

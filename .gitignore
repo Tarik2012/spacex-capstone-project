@@ -1,0 +1,10 @@
+# Entornos y cachés
+env/
+__pycache__/
+.ipynb_checkpoints/
+
+# Django
+db.sqlite3
+
+# Carpeta data: solo ignorar CSV grandes
+data/**/*.csv

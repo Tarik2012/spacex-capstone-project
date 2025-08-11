@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Home - SpaceX Capstone Project{% endblock %}
+
+{% block content %}
+  <section class="text-center">
+    <h1 class="text-4xl font-bold text-blue-800 mb-6">
+      Welcome to the SpaceX Capstone Project
+    </h1>
+    <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+      This website presents the final project of the IBM Data Science course, 
+      simulating a real-world case study for a fictional company: <strong>SpaceY</strong>. 
+      The project demonstrates data-driven insights, predictive modeling, and interactive 
+      visualizations built with Django and modern Python tools.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-10">
+      <div class="p-6 bg-white shadow-md rounded-lg border">
+        <h2 class="text-xl font-semibold text-blue-700 mb-2">Data Collection</h2>
+        <p class="text-sm text-gray-600">
+          Extracting launch records from the SpaceX REST API and scraping Wikipedia.
+        </p>
+      </div>
+      <div class="p-6 bg-white shadow-md rounded-lg border">
+        <h2 class="text-xl font-semibold text-blue-700 mb-2">Exploratory Data Analysis</h2>
+        <p class="text-sm text-gray-600">
+          Visualizing key metrics and identifying patterns through advanced EDA techniques.
+        </p>
+      </div>
+      <div class="p-6 bg-white shadow-md rounded-lg border">
+        <h2 class="text-xl font-semibold text-blue-700 mb-2">Machine Learning Model</h2>
+        <p class="text-sm text-gray-600">
+          Building a classification model to predict first stage reuse success.
+        </p>
+      </div>
+    </div>
+  </section>
+{% endblock %}

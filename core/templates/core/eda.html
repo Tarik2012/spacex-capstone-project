@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+{% block title %}Exploratory Data Analysis - SpaceX Capstone{% endblock %}
+
+{% block content %}
+  <h1 class="text-3xl font-bold text-blue-800 mb-6">Exploratory Data Analysis (EDA)</h1>
+
+  <div class="space-y-4 text-gray-700 leading-relaxed">
+    <p>
+      In this section, we explore and analyze the structure and distribution of the dataset.
+      The goal is to identify trends, outliers, correlations, and data quality issues that may impact our predictive modeling.
+    </p>
+
+    <p>
+      The visualizations below summarize key features such as payload mass, orbit type, launch success rates,
+      and landing outcomes. We use both static and interactive charts to highlight relevant insights.
+    </p>
+
+    <div class="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+      <p class="font-semibold mb-2">EDA Tools Used:</p>
+      <ul class="list-disc pl-6">
+        <li><code>pandas</code> – Data filtering and aggregation</li>
+        <li><code>matplotlib</code> / <code>seaborn</code> – Static data visualizations</li>
+        <li><code>plotly</code> – Interactive charts and graphs</li>
+      </ul>
+    </div>
+
+    <p class="mt-6 italic text-gray-500">
+      Below this section, you'll be able to embed interactive graphs or display charts generated from your analysis.
+    </p>
+  </div>
+{% endblock %}

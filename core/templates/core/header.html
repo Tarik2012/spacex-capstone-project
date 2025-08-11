@@ -1,0 +1,25 @@
+{% load static %}
+<header class="shadow-sm border-b">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <!-- Logo + Title -->
+    <div class="flex items-center space-x-4">
+      <img src="{% static 'images/logo.png' %}" alt="Logo" class="h-12 w-12" />
+      <a
+        href="{% url 'home' %}"
+        class="text-2xl font-bold text-blue-800 tracking-tight"
+      >
+        SpaceX Capstone
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="space-x-6 text-sm font-medium text-gray-700">
+        <a href="{% url 'resumen' %}" class="hover:text-blue-700">Summary</a>
+        <a href="{% url 'data_collection' %}" class="hover:text-blue-700">Data Collection</a>
+        <a href="{% url 'eda' %}" class="hover:text-blue-700">EDA</a>
+        <a href="{% url 'spacex_dashboard' %}" class="hover:text-blue-700">Dashboard</a>
+        <a href="#" class="hover:text-blue-700">Model</a>
+        <a href="#" class="hover:text-blue-700">Conclusion</a>
+    </nav>
+  </div>
+</header>

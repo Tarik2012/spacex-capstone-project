@@ -1,0 +1,26 @@
+# Django para interfaz
+Django==4.2.7
+
+# Análisis y manipulación de datos
+pandas
+numpy
+requests
+beautifulsoup4
+lxml
+
+# Visualización
+matplotlib
+seaborn
+plotly
+folium
+
+# Machine Learning
+scikit-learn
+joblib
+
+# Dash (solo si haces dashboard interactivo dentro de Django)
+dash
+
+# MLOps (solo si decides usarlo más adelante)
+# mlflow         ← lo puedes instalar más adelante si vas a hacer seguimiento de experimentos
+# dvc            ← útil si haces control de versiones de datos, pero no es obligatorio ahora
