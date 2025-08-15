@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Launch Sites Map - SpaceX Capstone{% endblock %}
+
+{% block content %}
+  <!-- Título y descripción a ancho completo -->
+  <h1 class="text-3xl font-bold text-blue-800 mb-4">Launch Sites Map</h1>
+
+  <div class="mb-6 text-gray-700 leading-relaxed space-y-4 max-w-4xl">
+    <p>
+      This interactive map displays the geographical locations of the main SpaceX launch sites used for Falcon 9 missions.
+      It has been designed to provide a clear, visual understanding of where launches take place across the United States.
+    </p>
+    <p>
+      Each marker corresponds to an official launch site. By clicking on a marker, you can view its name and location.
+      The map automatically adjusts the zoom to ensure all sites are visible, allowing you to explore each location in detail.
+    </p>
+    <p>
+      Understanding the distribution and proximity of launch sites is a key part of the exploratory data analysis in this project,
+      helping to identify patterns and factors that may influence launch success rates.
+    </p>
+  </div>
+
+  <!-- Mapa centrado -->
+  <div class="border border-gray-300 rounded-lg overflow-hidden shadow-lg mx-auto" style="height:500px; max-width:1000px;">
+    {{ map_html|safe }}
+  </div>
+{% endblock %}

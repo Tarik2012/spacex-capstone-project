@@ -10,30 +10,30 @@
     <div id="success_rate" class="card"></div>
     <div id="mass_year" class="card"></div>
     <div id="pads" class="card"></div>
-    <div id="clients" class="card md:col-span-2"></div>
+    <div id="outcomes" class="card md:col-span-2"></div>
   </div>
 
   <!-- Plotly: se carga SOLO en esta página -->
   <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
 
-  <!-- Estilo mínimo para las tarjetas (sin tocar la base) -->
+  <!-- Estilo mínimo para las tarjetas -->
   <style>
     .card { padding:16px; border-radius:12px; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,.06); min-height:320px; }
   </style>
 
   <!-- Datos y gráficos -->
   <script>
-    // Datos desde Django (seguros con escapejs)
+    // Datos desde Django
     const launchesYearLabels = JSON.parse('{{ launches_year_labels|escapejs }}');
     const launchesYearValues = JSON.parse('{{ launches_year_values|escapejs }}');
     const successYearLabels  = JSON.parse('{{ success_year_labels|escapejs }}');
     const successYearValues  = JSON.parse('{{ success_year_values|escapejs }}');
     const massYearLabels     = JSON.parse('{{ mass_year_labels|escapejs }}');
     const massYearValues     = JSON.parse('{{ mass_year_values|escapejs }}');
-    const clientsLabels      = JSON.parse('{{ clients_labels|escapejs }}');
-    const clientsValues      = JSON.parse('{{ clients_values|escapejs }}');
     const padsLabels         = JSON.parse('{{ pads_labels|escapejs }}');
     const padsValues         = JSON.parse('{{ pads_values|escapejs }}');
+    const outcomeLabels      = JSON.parse('{{ outcome_labels|escapejs }}');
+    const outcomeValues      = JSON.parse('{{ outcome_values|escapejs }}');
 
     // 1) Lanzamientos por año
     Plotly.newPlot("launches_year",
@@ -53,16 +53,16 @@
       { title:"Masa total por año (kg)", margin:{t:40}, xaxis:{title:"Año"}, yaxis:{title:"kg"} }
     );
 
-    // 4) Lanzamientos por rampa (Top 10)
+    // 4) Lanzamientos por sitio (Top 10)
     Plotly.newPlot("pads",
       [{ x: padsLabels, y: padsValues, type:"bar", hovertemplate:"%{x}: %{y}<extra></extra>" }],
-      { title:"Lanzamientos por rampa (Top 10)", margin:{t:40,b:100}, xaxis:{automargin:true}, yaxis:{title:"Lanzamientos"} }
+      { title:"Lanzamientos por sitio (Top 10)", margin:{t:40,b:100}, xaxis:{automargin:true}, yaxis:{title:"Lanzamientos"} }
     );
 
-    // 5) Top 10 clientes
-    Plotly.newPlot("clients",
-      [{ x: clientsLabels, y: clientsValues, type:"bar", hovertemplate:"%{x}: %{y}<extra></extra>" }],
-      { title:"Top 10 clientes", margin:{t:40,b:120}, xaxis:{automargin:true}, yaxis:{title:"Lanzamientos"} }
+    // 5) Top 10 resultados de Outcome
+    Plotly.newPlot("outcomes",
+      [{ x: outcomeLabels, y: outcomeValues, type:"bar", hovertemplate:"%{x}: %{y}<extra></extra>" }],
+      { title:"Top 10 Outcomes", margin:{t:40,b:120}, xaxis:{automargin:true}, yaxis:{title:"Cantidad"} }
     );
   </script>
 {% endblock %}
