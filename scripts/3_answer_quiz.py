@@ -31,3 +31,5 @@ print(f"1) Lanzamientos desde CCSFS SLC 40: {launches_ccsfs}")
 print(f"2) Tasa de éxito: {success_rate}%")
 print(f"3) Lanzamientos a órbita GEO: {geo_launches}")
 print(f"4) Aterrizajes exitosos en ASDS: {asds_landings}")
+
+

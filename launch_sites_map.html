@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d6c0bcf91e5d03cc18346277affbafed {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_d6c0bcf91e5d03cc18346277affbafed" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d6c0bcf91e5d03cc18346277affbafed = L.map(
+                "map_d6c0bcf91e5d03cc18346277affbafed",
+                {
+                    center: [28.5, -80.6],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d786f794660ea0916ca0e4b0b206602c = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d786f794660ea0916ca0e4b0b206602c.addTo(map_d6c0bcf91e5d03cc18346277affbafed);
+        
+    
+            var marker_719553dbce1a79ea355338a99686d81f = L.marker(
+                [28.5623, -80.5774],
+                {
+}
+            ).addTo(map_d6c0bcf91e5d03cc18346277affbafed);
+        
+    
+            var icon_ac968ac69ff6a7dd11c56efb744a28c5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "rocket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d67344123a452423904266989f006c12 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_318d25576575c8fc67fb09fa8992b227 = $(`<div id="html_318d25576575c8fc67fb09fa8992b227" style="width: 100.0%; height: 100.0%;"><b>CCAFS LC-40</b><br>Distancia: 6.9 km</div>`)[0];
+                popup_d67344123a452423904266989f006c12.setContent(html_318d25576575c8fc67fb09fa8992b227);
+            
+        
+
+        marker_719553dbce1a79ea355338a99686d81f.bindPopup(popup_d67344123a452423904266989f006c12)
+        ;
+
+        
+    
+    
+                marker_719553dbce1a79ea355338a99686d81f.setIcon(icon_ac968ac69ff6a7dd11c56efb744a28c5);
+            
+    
+            var circle_74410f6d1bd02452d11a39667e2d53eb = L.circle(
+                [28.5623, -80.5774],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6900.0, "stroke": true, "weight": 3}
+            ).addTo(map_d6c0bcf91e5d03cc18346277affbafed);
+        
+    
+            var marker_e6ec07f8774e8351be149f5d594d35f8 = L.marker(
+                [28.5733, -80.6469],
+                {
+}
+            ).addTo(map_d6c0bcf91e5d03cc18346277affbafed);
+        
+    
+            var icon_db597934656a223e8044b86b5e445e03 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "rocket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6de40086dc2ee2d2e5c208118f3d14d9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8c8018ada0ed7069d9f9640facb74324 = $(`<div id="html_8c8018ada0ed7069d9f9640facb74324" style="width: 100.0%; height: 100.0%;"><b>KSC LC-39A</b><br>Distancia: 0.0 km</div>`)[0];
+                popup_6de40086dc2ee2d2e5c208118f3d14d9.setContent(html_8c8018ada0ed7069d9f9640facb74324);
+            
+        
+
+        marker_e6ec07f8774e8351be149f5d594d35f8.bindPopup(popup_6de40086dc2ee2d2e5c208118f3d14d9)
+        ;
+
+        
+    
+    
+                marker_e6ec07f8774e8351be149f5d594d35f8.setIcon(icon_db597934656a223e8044b86b5e445e03);
+            
+    
+            var circle_c17dedd219942a9d95c8101358d6c6d4 = L.circle(
+                [28.5733, -80.6469],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_d6c0bcf91e5d03cc18346277affbafed);
+        
+    
+            var marker_dfae31dc5e7ce626a00acff49c33a393 = L.marker(
+                [34.6328, -120.6108],
+                {
+}
+            ).addTo(map_d6c0bcf91e5d03cc18346277affbafed);
+        
+    
+            var icon_10cbab5346c8ea86989f3383824f54d1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "rocket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ef69238a9de3a68e64af1fc79478079a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5ae252bbd76979b1e200018c6ea2bbcc = $(`<div id="html_5ae252bbd76979b1e200018c6ea2bbcc" style="width: 100.0%; height: 100.0%;"><b>VAFB SLC-4E</b><br>Distancia: 3819.06 km</div>`)[0];
+                popup_ef69238a9de3a68e64af1fc79478079a.setContent(html_5ae252bbd76979b1e200018c6ea2bbcc);
+            
+        
+
+        marker_dfae31dc5e7ce626a00acff49c33a393.bindPopup(popup_ef69238a9de3a68e64af1fc79478079a)
+        ;
+
+        
+    
+    
+                marker_dfae31dc5e7ce626a00acff49c33a393.setIcon(icon_10cbab5346c8ea86989f3383824f54d1);
+            
+    
+            var circle_30602ef9351c77ba1a1a724ec693f549 = L.circle(
+                [34.6328, -120.6108],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3819060.0, "stroke": true, "weight": 3}
+            ).addTo(map_d6c0bcf91e5d03cc18346277affbafed);
+        
+    
+            var marker_101509ff3e90ea97f38cac8c9d9be14b = L.marker(
+                [25.9972, -97.1566],
+                {
+}
+            ).addTo(map_d6c0bcf91e5d03cc18346277affbafed);
+        
+    
+            var icon_27943dfe31d91464d0c8822e30216a22 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "rocket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_347f41b94a7e553e20bab24118f195bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7686a9562f06e225aa8390335d8c49c3 = $(`<div id="html_7686a9562f06e225aa8390335d8c49c3" style="width: 100.0%; height: 100.0%;"><b>Boca Chica</b><br>Distancia: 1655.07 km</div>`)[0];
+                popup_347f41b94a7e553e20bab24118f195bb.setContent(html_7686a9562f06e225aa8390335d8c49c3);
+            
+        
+
+        marker_101509ff3e90ea97f38cac8c9d9be14b.bindPopup(popup_347f41b94a7e553e20bab24118f195bb)
+        ;
+
+        
+    
+    
+                marker_101509ff3e90ea97f38cac8c9d9be14b.setIcon(icon_27943dfe31d91464d0c8822e30216a22);
+            
+    
+            var circle_36fd47b23ee08cc4d1632ba3ec582142 = L.circle(
+                [25.9972, -97.1566],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1655070.0, "stroke": true, "weight": 3}
+            ).addTo(map_d6c0bcf91e5d03cc18346277affbafed);
+        
+</script>
+</html>

@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% block title %}Data Wrangling - SpaceX Capstone{% endblock %}
+
+{% block content %}
+  <h1 class="text-3xl font-bold text-blue-800 mb-6">Data Wrangling</h1>
+
+  <div class="space-y-4 text-gray-700 leading-relaxed">
+    <p>
+      In this section, we prepare and clean the dataset for predictive modeling.
+      The goal of Data Wrangling is to transform raw data into a structured format
+      that can be effectively used by machine learning algorithms.
+    </p>
+
+    <p>
+      Based on the results of our EDA, we perform the following steps:
+    </p>
+
+    <ul class="list-disc pl-6">
+      <li>Selection of relevant columns:
+        <code>FlightNumber</code>, <code>PayloadMass</code>, <code>Orbit</code>,
+        <code>LaunchSite</code>, <code>GridFins</code>, <code>Legs</code>,
+        <code>ReusedCount</code>, <code>Block</code>, and <code>Class</code>.
+      </li>
+      <li>Renaming variables for clarity
+        (<code>FlightNumber → flight</code>, <code>PayloadMass → payload</code>,
+        <code>ReusedCount → reused_count</code>, etc.).
+      </li>
+      <li>Handling missing values in <code>payload</code> (median imputation or row removal).</li>
+      <li>Encoding categorical features (<code>orbit</code>, <code>site</code>) using OneHotEncoding.</li>
+      <li>Scaling numerical features (<code>flight</code>, <code>payload</code>, <code>reused_count</code>, <code>block</code>).</li>
+    </ul>
+
+    <div class="bg-blue-50 border border-blue-200 p-4 rounded-lg mt-6">
+    <p class="font-semibold mb-2">Wrangling Tools Used:</p>
+      <ul class="list-disc pl-6">
+        <li><code>pandas</code> – Data selection, renaming, and cleaning</li>
+        <li><code>numpy</code> – Numerical operations and normalization support</li>
+        <li><code>scikit-learn</code> – Preprocessing (OneHotEncoder, StandardScaler)</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

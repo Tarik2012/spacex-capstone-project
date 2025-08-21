@@ -12,4 +12,11 @@ def data_collection(request):
 def eda(request):
     return render(request, 'core/eda.html')
 
+def data_wrangling(request):
+    return render(request, 'core/data_wrangling.html')
+
+def modeling(request):
+    return render(request, 'core/modeling.html')
+
+
 

@@ -3,26 +3,84 @@
 {% block title %}Launch Sites Map - SpaceX Capstone{% endblock %}
 
 {% block content %}
-  <!-- Título y descripción a ancho completo -->
-  <h1 class="text-3xl font-bold text-blue-800 mb-4">Launch Sites Map</h1>
+  <h1 class="text-3xl font-bold text-blue-800 mb-6">Launch Sites Map</h1>
 
-  <div class="mb-6 text-gray-700 leading-relaxed space-y-4 max-w-4xl">
-    <p>
-      This interactive map displays the geographical locations of the main SpaceX launch sites used for Falcon 9 missions.
-      It has been designed to provide a clear, visual understanding of where launches take place across the United States.
-    </p>
-    <p>
-      Each marker corresponds to an official launch site. By clicking on a marker, you can view its name and location.
-      The map automatically adjusts the zoom to ensure all sites are visible, allowing you to explore each location in detail.
-    </p>
-    <p>
-      Understanding the distribution and proximity of launch sites is a key part of the exploratory data analysis in this project,
-      helping to identify patterns and factors that may influence launch success rates.
-    </p>
+  <!-- Grid de 2 columnas -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+    <!-- Texto -->
+    <div class="text-gray-700 leading-relaxed space-y-4">
+      <p>
+        This interactive map displays the geographical locations of the main SpaceX launch sites used for Falcon 9 missions.
+        It has been designed to provide a clear, visual understanding of where launches take place across the United States.
+      </p>
+      <p>
+        Each marker corresponds to an official launch site. Green circles represent successful launches, while red circles indicate failures.
+        By clicking on a marker, you can view details of the site or the launch outcome.
+      </p>
+      <p>
+        Understanding the distribution and proximity of launch sites is a key part of the exploratory data analysis in this project,
+        helping to identify patterns and factors that may influence launch success rates.
+      </p>
+    </div>
+
+    <!-- Mapa -->
+    <div class="border border-gray-300 rounded-lg overflow-hidden shadow-lg"
+         style="height:350px;">
+      {{ map_html|safe }}
+    </div>
   </div>
 
-  <!-- Mapa centrado -->
-  <div class="border border-gray-300 rounded-lg overflow-hidden shadow-lg mx-auto" style="height:500px; max-width:1000px;">
-    {{ map_html|safe }}
+  <!-- Tabla de análisis -->
+  <div class="max-w-4xl mx-auto mb-12">
+    <h2 class="text-2xl font-semibold text-blue-700 mb-4">Launch Site Analysis</h2>
+    <table class="table-auto w-full border border-gray-300 shadow-md rounded-lg">
+      <thead class="bg-blue-100">
+        <tr>
+          <th class="px-4 py-2 text-left">Launch Site</th>
+          <th class="px-4 py-2 text-center">Total Launches</th>
+          <th class="px-4 py-2 text-center">Successes</th>
+          <th class="px-4 py-2 text-center">Failures</th>
+          <th class="px-4 py-2 text-center">Success Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for site in analysis %}
+        <tr class="border-t">
+          <td class="px-4 py-2">{{ site.name }}</td>
+          <td class="px-4 py-2 text-center">{{ site.total }}</td>
+          <td class="px-4 py-2 text-center text-green-600">{{ site.success }}</td>
+          <td class="px-4 py-2 text-center text-red-600">{{ site.failure }}</td>
+          <td class="px-4 py-2 text-center">{{ site.success_rate }}%</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5" class="text-center py-4">No data available</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tabla de distancias -->
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl font-semibold text-blue-700 mb-4">Proximity Analysis (Distances)</h2>
+    <table class="table-auto w-full border border-gray-300 shadow-md rounded-lg">
+      <thead class="bg-blue-100">
+        <tr>
+          <th class="px-4 py-2 text-left">Launch Site</th>
+          <th class="px-4 py-2 text-left">City</th>
+          <th class="px-4 py-2 text-center">Distance (km)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for d in distances %}
+        <tr class="border-t">
+          <td class="px-4 py-2">{{ d.site }}</td>
+          <td class="px-4 py-2">{{ d.city }}</td>
+          <td class="px-4 py-2 text-center">{{ d.distance_km }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3" class="text-center py-4">No distances available</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 {% endblock %}

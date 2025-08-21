@@ -1,0 +1,48 @@
+{% extends 'core/base.html' %}
+{% block title %}Modeling - SpaceX Capstone{% endblock %}
+
+{% block content %}
+  <h1 class="text-3xl font-bold text-blue-800 mb-6">Predictive Modeling</h1>
+
+  <div class="space-y-4 text-gray-700 leading-relaxed">
+    <p>
+      In this section, we build and evaluate machine learning models to predict the success of a Falcon 9 first stage landing.
+      The objective is to determine the best performing algorithm for future predictions based on the features prepared during data wrangling.
+    </p>
+
+    <p>
+      Since the target variable (<code>success</code>) is binary (0 = failure, 1 = success), 
+      this is a <strong>classification problem</strong>. We will test different classification algorithms and compare their performance.
+    </p>
+
+    <p>
+      Our modeling process follows these steps:
+    </p>
+
+    <ul class="list-disc pl-6">
+      <li>Define target variable (<code>success</code>) and feature set (<code>X</code>).</li>
+      <li>Split the dataset into training and testing sets (80/20).</li>
+      <li>Train multiple classification models:
+        <ul class="list-disc pl-10">
+          <li>Logistic Regression</li>
+          <li>Support Vector Machines (SVM)</li>
+          <li>Decision Tree Classifier</li>
+          <li>K-Nearest Neighbors (KNN)</li>
+          <li>Random Forest Classifier</li>
+        </ul>
+      </li>
+      <li>Optimize hyperparameters using <code>GridSearchCV</code>.</li>
+      <li>Evaluate models with accuracy scores and confusion matrices.</li>
+      <li>Select the best performing model for deployment.</li>
+    </ul>
+
+    <div class="bg-blue-50 border border-blue-200 p-4 rounded-lg mt-6">
+      <p class="font-semibold mb-2">Modeling Tools Used:</p>
+      <ul class="list-disc pl-6">
+        <li><code>scikit-learn</code> – Machine learning models, GridSearchCV, metrics</li>
+        <li><code>numpy</code> – Numerical operations</li>
+        <li><code>pandas</code> – Data handling</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}
