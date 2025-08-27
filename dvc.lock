@@ -1,0 +1,78 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python pipeline/train_model.py
+    deps:
+    - path: data/processed/clean_dataset.csv
+      hash: md5
+      md5: 0106d13084dd2a112216cfd5363ef217
+      size: 9129
+    - path: pipeline/train_model.py
+      hash: md5
+      md5: fa09906791b0c9f82e6c0bf4bcb90d39
+      size: 1331
+    outs:
+    - path: models/random_forest_model.joblib
+      hash: md5
+      md5: 8a0b85f457ebe1183963c3690d4b7bfc
+      size: 965138
+  evaluate:
+    cmd: python pipeline/evaluate_model.py
+    deps:
+    - path: models/random_forest_model.joblib
+      hash: md5
+      md5: 8a0b85f457ebe1183963c3690d4b7bfc
+      size: 965138
+    - path: pipeline/evaluate_model.py
+      hash: md5
+      md5: 968375b06fc864b012b195667e8a9cf5
+      size: 1675
+    outs:
+    - path: reports/evaluation.txt
+      hash: md5
+      md5: 9192d0aff91d5db41332ba772c46a1ef
+      size: 384
+    - path: reports/evaluation_confusion_matrix.png
+      hash: md5
+      md5: ee1acec1ec856089f62250cffcc53f1d
+      size: 17345
+  predict:
+    cmd: python pipeline/predict.py
+    deps:
+    - path: models/random_forest_model.joblib
+      hash: md5
+      md5: 8a0b85f457ebe1183963c3690d4b7bfc
+      size: 965138
+    - path: pipeline/predict.py
+      hash: md5
+      md5: 264ab30271bb3ae21abc0ce426417b5e
+      size: 1514
+    outs:
+    - path: data/predictions.csv
+      hash: md5
+      md5: 5a51e18b9dca21f4d82b43816863f557
+      size: 244
+  validate:
+    cmd: python pipeline/validate_model.py
+    deps:
+    - path: models/random_forest_model.joblib
+      hash: md5
+      md5: 8a0b85f457ebe1183963c3690d4b7bfc
+      size: 965138
+    - path: pipeline/validate_model.py
+      hash: md5
+      md5: be759b8bd88f01da5862df54ae600144
+      size: 2411
+    outs:
+    - path: data/validation_predictions.csv
+      hash: md5
+      md5: 829b6208eaa55c99fa174cad35376077
+      size: 680
+    - path: reports/validation.txt
+      hash: md5
+      md5: cd80810d556a9a158aba89d8792d418e
+      size: 384
+    - path: reports/validation_confusion_matrix.png
+      hash: md5
+      md5: 7fbe83dc6ca37db7ba44a7339b8b4ec7
+      size: 15530
