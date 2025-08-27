@@ -1,26 +1,17 @@
-# Django para interfaz
-Django==4.2.7
+# Requerimientos para SpaceX Capstone Project
 
-# Análisis y manipulación de datos
+# Ciencia de datos y ML
 pandas
 numpy
-requests
-beautifulsoup4
-lxml
+scikit-learn
+joblib
 
 # Visualización
 matplotlib
 seaborn
-plotly
-folium
 
-# Machine Learning
-scikit-learn
-joblib
+# MLOps
+dvc
 
-# Dash (solo si haces dashboard interactivo dentro de Django)
-dash
-
-# MLOps (solo si decides usarlo más adelante)
-# mlflow         ← lo puedes instalar más adelante si vas a hacer seguimiento de experimentos
-# dvc            ← útil si haces control de versiones de datos, pero no es obligatorio ahora
+# Opcional: para reproducibilidad y gráficos interactivos
+jupyter
