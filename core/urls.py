@@ -8,4 +8,5 @@ urlpatterns = [
     path('eda/', views.eda, name='eda'),
     path('data_wrangling/', views.data_wrangling, name='data_wrangling'),
     path('modeling/', views.modeling, name='modeling'),
+    path('model-comparison/', views.model_comparison, name='model_comparison'),
 ]

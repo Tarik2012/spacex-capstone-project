@@ -18,5 +18,11 @@ def data_wrangling(request):
 def modeling(request):
     return render(request, 'core/modeling.html')
 
+def model_comparison(request):
+    return render(request, 'core/model_comparison.html')
+
+
+
+
 
 

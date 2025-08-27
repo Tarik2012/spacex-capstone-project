@@ -1,0 +1,35 @@
+stages:
+  train:
+    cmd: python pipeline/train_model.py
+    deps:
+      - data/processed/clean_dataset.csv
+      - pipeline/train_model.py
+    outs:
+      - models/random_forest_model.joblib
+
+  evaluate:
+    cmd: python pipeline/evaluate_model.py
+    deps:
+      - models/random_forest_model.joblib
+      - pipeline/evaluate_model.py
+    outs:
+      - reports/evaluation.txt
+      - reports/evaluation_confusion_matrix.png
+
+  predict:
+    cmd: python pipeline/predict.py
+    deps:
+      - models/random_forest_model.joblib
+      - pipeline/predict.py
+    outs:
+      - data/predictions.csv
+
+  validate:
+    cmd: python pipeline/validate_model.py
+    deps:
+      - models/random_forest_model.joblib
+      - pipeline/validate_model.py
+    outs:
+      - reports/validation.txt
+      - reports/validation_confusion_matrix.png
+      - data/validation_predictions.csv
